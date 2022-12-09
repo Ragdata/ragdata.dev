@@ -1,0 +1,3 @@
+[submodule "themes/redeyed"]
+	path = themes/redeyed
+	url = git@github.com:ragdata/wt-redeyed-theme
