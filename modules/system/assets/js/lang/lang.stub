@@ -1,0 +1,10 @@
+/*
+ * This file has been compiled from: /modules/system/lang/{{locale}}/client.php
+ */
+if ($.wn === undefined) $.wn = {}
+if ($.oc === undefined) $.oc = $.wn
+if ($.wn.langMessages === undefined) $.wn.langMessages = {}
+$.wn.langMessages['{{locale}}'] = $.extend(
+    $.wn.langMessages['{{locale}}'] || {},
+    {{messages}}
+);

@@ -1,0 +1,34 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: backend::lang.user.role.name_field
+        commentAbove: backend::lang.user.role.name_comment
+        span: auto
+
+    code:
+        label: backend::lang.user.role.code_field
+        commentAbove: backend::lang.user.role.code_comment
+        span: auto
+        preset:
+            type: slug
+            field: name
+
+    description:
+        label: backend::lang.user.role.description_field
+        type: textarea
+        size: tiny
+
+tabs:
+    stretch: true
+    fields:
+        permissions:
+            tab: 'backend::lang.user.permissions'
+            type: 'Backend\FormWidgets\PermissionEditor'
+            mode: 'checkbox'
+        _users@update:
+            label: ''
+            tab: backend::lang.user.menu_label
+            type: partial

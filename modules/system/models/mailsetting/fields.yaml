@@ -1,0 +1,99 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        sender_name:
+            label: system::lang.mail.sender_name
+            span: auto
+            tab: system::lang.mail.general
+
+        sender_email:
+            label: system::lang.mail.sender_email
+            span: auto
+            type: email
+            tab: system::lang.mail.general
+
+        driver_hint:
+            type: hint
+            path: ~/modules/system/models/mailsetting/_drivers_hint.php
+            tab: system::lang.mail.general
+
+        send_mode:
+            label: system::lang.mail.method
+            type: balloon-selector
+            tab: system::lang.mail.general
+
+        smtp_address:
+            label: system::lang.mail.smtp_address
+            tab: system::lang.mail.general
+            trigger:
+                action: show
+                field: send_mode
+                condition: value[smtp]
+
+        smtp_port:
+            label: system::lang.mail.smtp_port
+            tab: system::lang.mail.general
+            span: auto
+            dependsOn: smtp_encryption
+            trigger:
+                action: show
+                field: send_mode
+                condition: value[smtp]
+
+        smtp_encryption:
+            type: dropdown
+            label: system::lang.mail.smtp_encryption
+            tab: system::lang.mail.general
+            span: auto
+            trigger:
+                action: show
+                field: send_mode
+                condition: value[smtp]
+
+        smtp_authorization:
+            type: checkbox
+            label: system::lang.mail.smtp_authorization
+            tab: system::lang.mail.general
+            comment: system::lang.mail.smtp_authorization_comment
+            trigger:
+                action: show
+                field: send_mode
+                condition: value[smtp]
+
+        smtp_user:
+            label: system::lang.mail.smtp_username
+            tab: system::lang.mail.general
+            span: left
+            dependsOn: smtp_authorization
+            trigger:
+                action: show
+                field: send_mode
+                condition: value[smtp]
+
+        smtp_password:
+            label: system::lang.mail.smtp_password
+            tab: system::lang.mail.general
+            type: sensitive
+            span: right
+            dependsOn: smtp_authorization
+            trigger:
+                action: show
+                field: send_mode
+                condition: value[smtp]
+
+        sendmail_path:
+            label: system::lang.mail.sendmail_path
+            commentAbove: system::lang.mail.sendmail_path_comment
+            tab: system::lang.mail.general
+            trigger:
+                action: show
+                field: send_mode
+                condition: value[sendmail]
+
+        _send_test:
+            type: partial
+            path: ~/modules/system/models/mailsetting/_send_test_button.php
+            tab: system::lang.mail.general

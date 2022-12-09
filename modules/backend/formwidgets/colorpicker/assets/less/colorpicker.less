@@ -1,0 +1,109 @@
+@import "../../../../assets/less/core/boot.less";
+
+.field-colorpicker {
+
+    .colorpicker-container {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+        max-width: 300px;
+        width: 100%;
+    }
+
+    [data-color-preview] {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 40px;
+        height: @input-height-base;
+        background: @input-bg;
+        cursor: pointer;
+        border: 1px solid @input-border;
+        .box-shadow(@input-box-shadow);
+        border-top-left-radius: @input-border-radius;
+        border-bottom-left-radius: @input-border-radius;
+    }
+
+    [data-color-value] {
+        flex: 1;
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    // PICKR OVERRIDES
+    .pcr-app[data-theme="nano"] {
+
+        width: 18em;
+
+        .pcr-selection {
+
+            // Add an additional row to the grid for color selection and preview
+            grid-template-rows: 1fr 5fr auto auto;
+            gap: 0;
+
+            .pcr-color-preview {
+                grid-row-start: 1;
+                grid-column-start: 1;
+                grid-row-end: 1;
+                grid-column-end: 3;
+                margin: 0;
+                flex-direction: row-reverse;
+
+                .pcr-current-color {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    width: 80%;
+                    border-radius: 0;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                    font-family: monospace;
+                    height: 28px;
+                    line-height: 29px;
+                    text-align: center;
+                    font-size: 0.85em;
+
+                    &::before {
+                        content: none;
+                    }
+                }
+
+                .pcr-last-color {
+                    display: block;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    width: 20%;
+                    border-radius: 0;
+                    background: var(--pcr-color);
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            .pcr-color-palette {
+                grid-row-start: 2;
+                grid-column-start: 1;
+                grid-row-end: 2;
+                grid-column-end: 3;
+            }
+
+            .pcr-color-chooser {
+                margin-top: 0.8rem;
+                grid-row-start: 3;
+                grid-column-start: 1;
+                grid-row-end: 3;
+                grid-column-end: 3;
+            }
+
+            .pcr-color-opacity {
+                margin-top: 0.8em;
+                grid-row-start: 4;
+                grid-column-start: 1;
+                grid-row-end: 4;
+                grid-column-end: 3;
+            }
+
+        }
+    }
+
+    &[data-disabled="true"] [data-color-preview] {
+        cursor: default;
+    }
+}
