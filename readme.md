@@ -6,6 +6,7 @@ Ragdata's Dev Site
 https://ragdata.dev
 
 [![DeepScan grade](https://deepscan.io/api/teams/19727/projects/23260/branches/700748/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=19727&pid=23260&bid=700748)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRagdata%2Fragdata.dev.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRagdata%2Fragdata.dev?ref=badge_shield)
 &nbsp;
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a3553a61b14a47bd97b63e23a5474207)](https://www.codacy.com/gh/Ragdata/ragdata.dev/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Ragdata/ragdata.dev&amp;utm_campaign=Badge_Grade)
 &nbsp;
@@ -41,3 +42,7 @@ I've decided to leave this repository open to the public in order to show some l
 [winterdocs]: https://wintercms.com/docs
 [wintergit]: https://github.com/wintercms/winter
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRagdata%2Fragdata.dev.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRagdata%2Fragdata.dev?ref=badge_large)
